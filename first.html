@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		 function draw() {
+		 	var canvas = document.getElementById("canvas");
+		 	var ctx = canvas.getContext("2d");
+		 	//grey background
+		 	ctx.fillStyle = "rgb(200,200,200)";
+		 	ctx.fillRect (0, 0, 600, 450);
+		 	//draw  and label horizontal lines
+		 	ctx.fillStyle = "white";
+		 	ctx.font = "16px sans-serif";
+		 	for(y=0; y<=350; y+=50){
+		 		//line
+		 		ctx.beginPath();
+		 		ctx.moveTo(50,y+50);
+		 		ctx.lineTo(550,y+50);
+		 		ctx.stroke();
+		 		//label ( the 6 is an offset to centre the text vertically on the line)
+		 		ctx.fillText(y, 10, 400-y+6);
+		 	}
+		 	//draw boxes (hardcoded widths)
+		 	ctx.fillStyle="red";
+		 	for(b=1;b<=4;b++){
+		 		var boxObj = document.getElementById("box"+b);
+		 		var boxVal = boxObj.value;
+		 		var x = 60+(b-1)*120;
+		 		ctx.fillRect(x,400-boxVal,100,boxVall);
+
+		 	}
+		 }
+
+		</script>
+	</head>
+	<body>
+		
+		<form>
+			
+			<input id="box1" value='1'><br>
+			<input id="box2" value='2'><br>
+			<input id="box3" value='3'><br>
+			<input id="box4" value='4'><br>
+			<input type= button value='Draw Chart' onclick='draw();'>
+		</form>
+		<canvas id="canvas" width="600" height="450"></canvas>
+	</body>
+</html>

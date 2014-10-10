@@ -1,0 +1,37 @@
+
+<html>
+	<head>
+		<style type="text/css">
+		#canvas{
+			margin-left: 25%;
+		}
+
+		</style>
+
+		<script>
+			function draw() {
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+			
+				for(var j=0; j<= canvas.height; j+=50){
+					for (var i = 0;i <= canvas.width; i+=50) {
+					
+
+						var r = Math.floor(Math.random()*256);
+						var g = Math.floor(Math.random()*256);
+						var b = Math.floor(Math.random()*256);
+						ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+						ctx.fillRect (i, j, 50, 50);
+					}
+				}
+
+			}
+		</script>
+	</head>
+	<body onload ="draw();">
+
+		<canvas id="canvas" width="600" height="600"></canvas>
+
+		<p id="demo"></p>
+	</body>
+</html>

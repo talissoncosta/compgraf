@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		 function drawsquare() {
+		 	
+		 	var canvas = document.getElementById("canvas");
+		 	var ctx = canvas.getContext("2d");
+		 	//grey background
+		 	ctx.fillStyle = "rgb(200,200,200)";
+		 	ctx.fillRect (0, 0, 600, 450);
+		 	//draw  and label horizontal lines
+		 	ctx.fillStyle = "white";
+		 	ctx.font = "16px sans-serif";
+		 	}
+		 }
+
+		</script>
+	</head>
+	<body>
+		<form>
+			
+			<input type= button value='Draw Chart' onclick='draw();'>
+		</form>
+		
+		<canvas id="canvas" width="600" height="450" onload="drawsquare();"></canvas>
+	</body>
+</html>
